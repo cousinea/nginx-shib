@@ -11,10 +11,6 @@ RUN apt-get update \
 ADD build-nginx.sh /tmp/build-nginx.sh
 RUN /bin/bash /tmp/build-nginx.sh
 
-# Get envplate, see https://github.com/kreuzwerker/envplate
-RUN curl -sLo /usr/local/bin/ep https://github.com/kreuzwerker/envplate/releases/download/v0.0.7/ep-linux \
-	&& chmod +x /usr/local/bin/ep
-
 # Prep the cache folders
 RUN mkdir /var/cache/nginx /var/run/shibboleth /var/log/shibboleth || true \
 	&& shib-keygen -f \
@@ -36,4 +32,4 @@ COPY supervisor/ /etc/supervisor/
 EXPOSE 80 9090
 
 #CMD /bin/bash
-CMD ["/usr/local/bin/ep", "-v", "/usr/local/nginx/conf.d/default.conf", "/etc/shibboleth/shibboleth2.xml", "--", "/usr/bin/supervisord", "--nodaemon", "--configuration", "/etc/supervisor/supervisord.conf"]
+CMD ["/usr/bin/supervisord", "--nodaemon", "--configuration", "/etc/supervisor/supervisord.conf"]
