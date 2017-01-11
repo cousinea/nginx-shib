@@ -118,7 +118,7 @@
                       checkAddress="false"
                       cookieProps="http">
 
-                <SSO entityID="https://shib-idp-test.www.umich.edu">
+                <SSO entityID="https://shib-idp-test.www.umich.edu/idp/shibboleth">
                     SAML2 SAML1
                 </SSO>
 
