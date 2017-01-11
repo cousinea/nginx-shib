@@ -118,7 +118,7 @@
                       cookieProps="http">
 
                 <!-- DEFAULT to OpenIdP -->
-                <SSO entityID="https://shib-idp-test.www.umich.edu">
+                <SSO entityID="https://sp.testshib.org/shibboleth-sp">
                     SAML2 SAML1
                 </SSO>
 
