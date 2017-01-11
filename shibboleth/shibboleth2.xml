@@ -22,7 +22,7 @@
     <RequestMapper type="XML">
         <RequestMap applicationId="client"
                     authType="shibboleth">
-            <Host name="localhost"
+            <Host name="nginx-shib.openshift.dsc.umich.edu"
                   requireSession="true">
                 <Path name="/secure" />
             </Host>
@@ -110,7 +110,7 @@
         <ApplicationOverride id="admin" entityID="https://admin.example.org/shibboleth"/>
         -->
 
-        <ApplicationOverride id="client" entityID="http://localhost/saml/metadata">
+        <ApplicationOverride id="client" entityID="http://nginx-shib.openshift.dsc.umich.edu/saml/metadata">
             <Sessions lifetime="28800" timeout="3600" relayState="ss:mem"
                       handlerURL="/saml"
                       handlerSSL="false"
