@@ -24,7 +24,7 @@
                     authType="shibboleth">
             <Host name="nginx-shib.openshift.dsc.umich.edu"
                   requireSession="true">
-                <Path name="/" />
+                <Path name="/secure" />
             </Host>
         </RequestMap>
     </RequestMapper>
