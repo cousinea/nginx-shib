@@ -24,7 +24,7 @@
                     authType="shibboleth">
             <Host name="nginx-shib.openshift.dsc.umich.edu"
                   requireSession="true">
-                <Path name="/secure" />
+                <Path name="/" />
             </Host>
         </RequestMap>
     </RequestMapper>
@@ -79,12 +79,7 @@
                 helpLocation="/about.html"
                 styleSheet="/shibboleth-sp/main.css"/>
 
-        <!--
-          - TestShib
-          - @see http://www.testshib.org/
-          -->
-        <MetadataProvider type="XML" uri="http://www.testshib.org/metadata/testshib-providers.xml"
-                          backingFilePath="testshib-two-idp-metadata.xml" reloadInterval="180000"/>
+        <MetadataProvider type="XML" uri="https://shib-idp-test.www.umich.edu/idp/shibboleth" reloadInterval="180000"/>
 
         <!-- Map to extract attributes from SAML assertions. -->
         <AttributeExtractor type="XML" validate="true" reloadChanges="false" path="attribute-map.xml"/>
