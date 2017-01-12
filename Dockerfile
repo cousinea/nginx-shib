@@ -20,7 +20,7 @@ RUN mkdir /var/cache/nginx /var/run/shibboleth /var/log/shibboleth || true \
 COPY nginx /usr/local/nginx/ 
 
 # Copy the sample app into the nginx directory
-#COPY app/ /usr/local/nginx/html
+COPY app/ /usr/local/nginx/html
 
 # Copy the sample shibboleth metadata into the shib dir.
 COPY shibboleth/ /etc/shibboleth
