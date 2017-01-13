@@ -16,7 +16,9 @@ RUN mkdir /var/cache/nginx /var/run/shibboleth /var/log/shibboleth || true \
 	&& shib-keygen -f \
 	&& chown -R _shibd /var/cache/nginx/
 
-RUN apt-get remove -y curl git
+# Remove libraries unnecessary for deployment.
+RUN apt-get remove -y curl git libpcre3-dev build-essential zlib1g-dev libssl-dev \
+	&& apt-get autoremove -y
 
 # Copy the nginx config to container.
 COPY nginx /usr/local/nginx/ 
