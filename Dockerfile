@@ -16,18 +16,18 @@ RUN mkdir /var/cache/nginx /var/run/shibboleth /var/log/shibboleth || true \
 	&& shib-keygen -f \
 	&& chown -R _shibd /var/cache/nginx/
 
+RUN apt-get remove -y curl git
+
 # Copy the nginx config to container.
 COPY nginx /usr/local/nginx/ 
 
 # Copy the sample app into the nginx directory
-COPY app/ /usr/local/nginx/html
+COPY app/ /usr/local/nginx/html/
 
 # Copy the sample shibboleth metadata into the shib dir.
-COPY shibboleth/ /etc/shibboleth
+COPY shibboleth/ /etc/shibboleth/
 
 COPY supervisor/ /etc/supervisor/
-
-#RUN apt-get remove -y curl git
 
 EXPOSE 80 9090
 
