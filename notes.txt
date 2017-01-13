@@ -1,6 +1,4 @@
-nginx is running.
-shibboleth is running.
-can access main page
-	
-localhost/saml gives an exception for an unavailable endpoint, but saml/status reads ok.
-Why is that?  Do I need to have correct metadata?
+/secure endpoint is protected by shib, but I cannot send eppn, remote-user as a header.
+
+Think that the solution may be at the bottom of this page:
+	https://github.com/nginx-shib/nginx-http-shibboleth
