@@ -1,1 +1,18 @@
-howdy, this is a secure path.
+<html>
+
+<head>
+	<script language="javascript">
+		var req = new XMLHttpRequest();
+		req.open('GET', document.location, false);
+		req.send(null);
+		var headers = req.getAllResponseHeaders().toLowerCase();
+		alert(headers);
+	</script>
+</head>
+
+<body>
+	howdy, this is a secure path.
+</body>
+
+</html>
+
