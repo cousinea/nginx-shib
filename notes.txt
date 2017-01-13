@@ -2,3 +2,6 @@
 
 Think that the solution may be at the bottom of this page:
 	https://github.com/nginx-shib/nginx-http-shibboleth
+	
+Also looking here:
+	https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPAttributeAccess
