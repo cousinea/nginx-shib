@@ -17,7 +17,7 @@ RUN mkdir /var/cache/nginx /var/run/shibboleth /var/log/shibboleth || true \
 	&& chown -R _shibd /var/cache/nginx/
 
 # Remove libraries unnecessary for deployment.
-RUN apt-get remove -y curl git libssl-dev build-essential libpcre3-dev \
+RUN apt-get remove -y curl git libssl-dev build-essential zlib1g-dev \
 	&& apt-get autoremove -y
 
 # libpcre3-dev zlib1g-dev - working
